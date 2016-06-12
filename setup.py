@@ -1,6 +1,14 @@
-from sqlalchemy import create_engine
+#!/usr/bin/env python
 
-from narcis_api import config, models
+from distutils.core import setup
 
-engine = create_engine(config.db)
-models.Base.metadata.create_all(engine)
+setup(
+    name='narcis-api',
+    version='0.0.1',
+    description='The core API module for metadata about build screenshots',
+    author='Jared Deckard',
+    author_email='jared.deckard@gmail.com',
+    url='https://github.com/narcisus/narcis-api',
+    packages=['narcis_api', 'narcis_api.models'],
+    package_dir={'narcis_api': 'narcis_api'},
+)
